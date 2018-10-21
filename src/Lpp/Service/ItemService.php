@@ -5,13 +5,11 @@
 
 namespace Lpp\Service;
 
-
 use JMS\Serializer\Serializer;
 use Lpp\Entity\Collection;
 
 class ItemService implements ItemServiceInterface
 {
-
     const PATH = __DIR__.'/../../../data';
 
     /**

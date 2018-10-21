@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * Represents a single item from a search result.
- * 
+ *
  */
 class Item implements Validable
 {
@@ -21,16 +21,16 @@ class Item implements Validable
 
     /**
      * Url of the item's page
-     * 
+     *
      * @var string
      * @Type("string")
      */
     public $url;
 
     /**
-     * Unsorted list of prices received from the 
+     * Unsorted list of prices received from the
      * actual search query.
-     * 
+     *
      * @var Price[]
      * @Type("array<Lpp\Entity\Price>")
      */

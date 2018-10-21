@@ -8,7 +8,7 @@ use Lpp\Entity\Brand;
 use Lpp\Entity\Collection;
 use Lpp\Service\ItemService;
 
-class ItemServiceTest extends PHPUnit_Framework_TestCase
+class ItemServiceTest extends AbstractServiceTest
 {
     public function testGetResultForCollectionId()
     {
@@ -36,21 +36,9 @@ class ItemServiceTest extends PHPUnit_Framework_TestCase
         }
     }
 }';
-        $mockBrand1 = new Brand();
-        $mockBrand1->name = 'brand1';
-        $mockBrand1->description = 'brand test description';
-        $mockBrand1->items = [];
-
-        $mockBrand2 = new Brand();
-        $mockBrand2->name = 'brand2';
-        $mockBrand2->description = 'brand test description';
-        $mockBrand2->items = [];
-
-        $mockCollection = new Collection();
-        $mockCollection->collection = 'spring';
-        $mockCollection->id = 12345;
-        $mockCollection->brands = [$mockBrand1, $mockBrand2];
-
+        $mockBrand1 = $this->getBrandMock('brand1');
+        $mockBrand2 = $this->getBrandMock('brand2');
+        $mockCollection = $this->getCollectionMock('spring', 12345, [$mockBrand1, $mockBrand2]);
 
         $serializerMock = $this->createMock(Serializer::class);
         $serializerMock

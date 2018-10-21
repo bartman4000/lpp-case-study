@@ -10,8 +10,7 @@ use Lpp\Service\ItemService;
 use Lpp\Service\ItemServiceInterface;
 use Lpp\Service\UnorderedBrandService;
 
-
-class UnorderedBrandServiceTest extends PHPUnit_Framework_TestCase
+class UnorderedBrandServiceTest extends AbstractServiceTest
 {
     /**
      * @var ItemServiceInterface
@@ -20,21 +19,9 @@ class UnorderedBrandServiceTest extends PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $mockItem1 = new Item();
-        $mockItem1->name = 'item1';
-        $mockItem1->url = 'www.item1.lpp.com';
-        $mockItem1->prices = [];
-
-        $mockItem2 = new Item();
-        $mockItem2->name = 'item2';
-        $mockItem2->url = 'www.item2.lpp.com';
-        $mockItem2->prices = [];
-
-        $mockBrand = new Brand();
-        $mockBrand->name = 'brand1';
-        $mockBrand->description = 'brand test description';
-        $mockBrand->items = [$mockItem1, $mockItem2];
-
+        $mockItem1 = $this->getItemMock('item1');
+        $mockItem2 = $this->getItemMock('item2');
+        $mockBrand = $this->getBrandMock('brand1', [$mockItem1, $mockItem2]);
         $mockData = array(
             $mockBrand
         );
@@ -65,5 +52,4 @@ class UnorderedBrandServiceTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf(Item::class, $items[0]);
         $this->assertEquals('item2', $items[1]->name);
     }
-
 }

@@ -1,13 +1,13 @@
 <?php
 
 use Lpp\Entity\Item;
-use Lpp\Validator\CollectionValidator;
+use Lpp\Validator\EntityValidator;
 
 /**
  * Copyright (c) Bartłomiej Olewiński <bartlomiej.olewinski@gmail.com>
  */
 
-class CollectionValidatorTest extends PHPUnit_Framework_TestCase
+class EntityValidatorTest extends PHPUnit_Framework_TestCase
 {
     public function testValidateGoodItem()
     {
@@ -16,7 +16,7 @@ class CollectionValidatorTest extends PHPUnit_Framework_TestCase
         $item->url = "http://www.valid.url";
         $item->prices = [];
 
-        $collectionValidator = new CollectionValidator();
+        $collectionValidator = new EntityValidator();
         $result = $collectionValidator::validate($item);
 
         $this->assertTrue($result);
@@ -32,7 +32,7 @@ class CollectionValidatorTest extends PHPUnit_Framework_TestCase
         $item->url = "invalidurl";
         $item->prices = [];
 
-        $collectionValidator = new CollectionValidator();
+        $collectionValidator = new EntityValidator();
         $collectionValidator::validate($item);
     }
 }

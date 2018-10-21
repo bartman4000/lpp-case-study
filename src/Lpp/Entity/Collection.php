@@ -5,11 +5,9 @@
 
 namespace Lpp\Entity;
 
-
 use JMS\Serializer\Annotation\Type;
-use Symfony\Component\Validator\Mapping\ClassMetadata;
 
-class Collection implements Validable
+class Collection
 {
     /**
      * Name of the collection
@@ -47,10 +45,5 @@ class Collection implements Validable
     public function getBrands()
     {
         return $this->brands;
-    }
-
-    public static function loadValidatorMetadata(ClassMetadata $metadata)
-    {
-        // TODO: Implement loadValidatorMetadata() method.
     }
 }

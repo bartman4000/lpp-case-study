@@ -13,11 +13,8 @@ AnnotationRegistry::registerLoader(array($autoloader, "loadClass"));
 error_reporting(E_ALL);
 
 $itemService = new ItemService(SerializerFactory::build());
-//$brands = $itemService->getResultForCollectionId(1315475);
-
 $brandService = new UnorderedBrandService($itemService);
-//$brands = $brandService->getBrandsForCollection("winter");
-
+$brands = $brandService->getBrandsForCollection("winter");
 $items = $brandService->getItemsForCollection("winter");
 
 print_r($items);exit();

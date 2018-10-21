@@ -10,11 +10,11 @@ use Lpp\Entity\Validable;
 use Symfony\Component\Validator\Exception\ValidatorException;
 use Symfony\Component\Validator\Validation;
 
-class CollectionValidator
+class EntityValidator
 {
 
     /**
-     * ItemValidator constructor.
+     * Common validator for Entity objects
      */
     public static function validate(Validable $item)
     {

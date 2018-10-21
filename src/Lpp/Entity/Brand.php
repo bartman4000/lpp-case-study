@@ -2,13 +2,12 @@
 namespace Lpp\Entity;
 
 use JMS\Serializer\Annotation\Type;
-use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * Represents a single brand in the result.
  *
  */
-class Brand implements Validable
+class Brand
 {
     /**
      * Name of the brand
@@ -20,7 +19,7 @@ class Brand implements Validable
 
     /**
      * Brand's description
-     * 
+     *
      * @var string
      * @Type("string")
      */
@@ -28,7 +27,7 @@ class Brand implements Validable
 
     /**
      * Unsorted list of items with their corresponding prices.
-     * 
+     *
      * @var Item[]
      * @Type("array<Lpp\Entity\Item>")
      */
@@ -41,10 +40,5 @@ class Brand implements Validable
     public function addItems(Item $item)
     {
         $this->items[] = $item;
-    }
-
-    public static function loadValidatorMetadata(ClassMetadata $metadata)
-    {
-        // TODO: Implement loadValidatorMetadata() method.
     }
 }

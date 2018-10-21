@@ -12,7 +12,7 @@ class UnorderedBrandService implements \Lpp\Service\BrandServiceInterface
 
     /**
      * Maps from collection name to the id for the item service.
-     *  
+     *
      * @var []
      */
     private $collectionNameToIdMapping = [
@@ -22,8 +22,9 @@ class UnorderedBrandService implements \Lpp\Service\BrandServiceInterface
     /**
      * @param ItemServiceInterface $itemService
      */
-    public function __construct(ItemServiceInterface $itemService) {
-       $this->itemService = $itemService;
+    public function __construct(ItemServiceInterface $itemService)
+    {
+        $this->itemService = $itemService;
     }
 
     /**
@@ -31,7 +32,8 @@ class UnorderedBrandService implements \Lpp\Service\BrandServiceInterface
      *
      * @return \Lpp\Entity\Brand[]
      */
-    public function getBrandsForCollection($collectionName) {
+    public function getBrandsForCollection($collectionName)
+    {
         if (empty($this->collectionNameToIdMapping[$collectionName])) {
             throw new \InvalidArgumentException(sprintf('Provided collection name [%s] is not mapped.', $collectionName));
         }
@@ -49,7 +51,8 @@ class UnorderedBrandService implements \Lpp\Service\BrandServiceInterface
      *
      * @return void
      */
-    public function setItemService(ItemServiceInterface $itemService) {
+    public function setItemService(ItemServiceInterface $itemService)
+    {
         $this->itemService = $itemService;
     }
 

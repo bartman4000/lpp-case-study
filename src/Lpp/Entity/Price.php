@@ -4,18 +4,17 @@ namespace Lpp\Entity;
 
 use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\Type;
-use Symfony\Component\Validator\Mapping\ClassMetadata;
 
 /**
  * Represents a single price from a search result
  * related to a single item.
- * 
+ *
  */
-class Price implements Validable
+class Price
 {
     /**
      * Description text for the price
-     * 
+     *
      * @var string
      * @Type("string")
      */
@@ -48,9 +47,4 @@ class Price implements Validable
      * @SerializedName("due")
      */
     public $dueDate;
-
-    public static function loadValidatorMetadata(ClassMetadata $metadata)
-    {
-        // TODO: Implement loadValidatorMetadata() method.
-    }
 }
