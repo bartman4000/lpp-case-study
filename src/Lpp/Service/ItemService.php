@@ -33,7 +33,7 @@ class ItemService implements ItemServiceInterface
      *
      * @return \Lpp\Entity\Brand[]
      */
-    public function getResultForCollectionId($collectionId)
+    public function getResultForCollectionId(int $collectionId): array
     {
         $data = $this->getData($collectionId);
 
@@ -42,7 +42,11 @@ class ItemService implements ItemServiceInterface
         return $collection->getBrands();
     }
 
-    protected function getData($collectionId)
+    /**
+     * @param int $collectionId
+     * @return string
+     */
+    protected function getData(int $collectionId): string
     {
         $path = self::PATH.'/'.$collectionId.'.json';
         return $data = file_get_contents($path);

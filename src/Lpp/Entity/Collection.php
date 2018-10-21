@@ -34,15 +34,15 @@ class Collection
      * This method is necessary to convert array of arrays to array of Item objects while deserializing
      * @param Brand $brand
      */
-    public function addBrands(Brand $brand)
+    public function addBrands(Brand $brand): void
     {
         $this->brands[] = $brand;
     }
 
     /**
-     * @return mixed
+     * @return array<Lpp\Entity\Brand>
      */
-    public function getBrands()
+    public function getBrands(): array
     {
         return $this->brands;
     }

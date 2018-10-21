@@ -6,7 +6,8 @@
 4. Made another implementation of BrandServiceInterface called OrderedBrandService which allows to have setted additional callables for sorting logic.
 5. Found in BrandServiceInterface phpdoc excerpt:
 
-```Second responsibility is to sort the returning result from the item service in whatever way.
+```
+  Second responsibility is to sort the returning result from the item service in whatever way.
   Please write in the case study's summary if you find this approach correct or not. In both cases explain why.
   ```
   

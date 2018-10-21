@@ -18,7 +18,7 @@ interface BrandServiceInterface
     *
     * @return \Lpp\Entity\Item[]
     */
-    public function getItemsForCollection($collectionName);
+    public function getItemsForCollection(string $collectionName);
 
     /**
      * This is supposed to be used for testing purposes.

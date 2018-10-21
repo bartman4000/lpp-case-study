@@ -3,15 +3,21 @@
 use Lpp\Entity\Brand;
 use Lpp\Entity\Collection;
 use Lpp\Entity\Item;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Copyright (c) Bartłomiej Olewiński <bartlomiej.olewinski@gmail.com>
  */
 
 
-abstract class AbstractServiceTest extends PHPUnit_Framework_TestCase
+abstract class AbstractServiceTest extends TestCase
 {
-    protected function getBrandMock($name, array $items = [])
+    /**
+     * @param $name
+     * @param array $items
+     * @return Brand
+     */
+    protected function getBrandMock($name, array $items = []): Brand
     {
         $mockBrand = new Brand();
         $mockBrand->name = $name;
@@ -20,7 +26,12 @@ abstract class AbstractServiceTest extends PHPUnit_Framework_TestCase
         return $mockBrand;
     }
 
-    protected function getItemMock($name, array $prices = [])
+    /**
+     * @param $name
+     * @param array $prices
+     * @return Item
+     */
+    protected function getItemMock($name, array $prices = []): Item
     {
         $mockItem = new Item();
         $mockItem->name = $name;
@@ -29,7 +40,13 @@ abstract class AbstractServiceTest extends PHPUnit_Framework_TestCase
         return $mockItem;
     }
 
-    protected function getCollectionMock($name, $id, array $brands = [])
+    /**
+     * @param $name
+     * @param $id
+     * @param array $brands
+     * @return Collection
+     */
+    protected function getCollectionMock($name, $id, array $brands = []): Collection
     {
         $mockCollection = new Collection();
         $mockCollection->collection = $name;

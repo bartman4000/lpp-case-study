@@ -14,7 +14,7 @@ class OrderedBrandService extends UnorderedBrandService
     /** @var callable|null */
     protected $itemSortCallable = null;
 
-    public function getItemsForCollection($collectionName)
+    public function getItemsForCollection(string $collectionName): array
     {
         $items = parent::getItemsForCollection($collectionName);
         if (!is_null($this->itemSortCallable)) {
@@ -23,7 +23,7 @@ class OrderedBrandService extends UnorderedBrandService
         return $items ;
     }
 
-    public function getBrandsForCollection($collectionName)
+    public function getBrandsForCollection(string $collectionName): array
     {
         $items = parent::getBrandsForCollection($collectionName);
         if (!is_null($this->brandSortCallable)) {

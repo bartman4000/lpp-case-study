@@ -19,7 +19,7 @@ class SerializerFactory
      * Factory returning SerializeInterface
      * @return Serializer
      */
-    public static function build()
+    public static function build(): Serializer
     {
         $builder = SerializerBuilder::create();
         $builder->configureListeners(function (EventDispatcher $dispatcher) {

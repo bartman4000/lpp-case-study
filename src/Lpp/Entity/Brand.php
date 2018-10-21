@@ -37,7 +37,7 @@ class Brand
      * This method is necessary to convert array of arrays to array of Item objects while deserializing
      * @param Item $item
      */
-    public function addItems(Item $item)
+    public function addItems(Item $item): void
     {
         $this->items[] = $item;
     }

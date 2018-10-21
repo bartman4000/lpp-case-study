@@ -16,7 +16,7 @@ class EntityValidator
     /**
      * Common validator for Entity objects
      */
-    public static function validate(Validable $item)
+    public static function validate(Validable $item): bool
     {
         $validator = Validation::createValidatorBuilder()
             ->addMethodMapping('loadValidatorMetadata')

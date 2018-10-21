@@ -40,7 +40,7 @@ class Item implements Validable
      * This method is necessary to convert array of arrays to array of Price objects while deserializing
      * @param Price $price
      */
-    public function addPrices(Price $price)
+    public function addPrices(Price $price): void
     {
         $this->prices[] = $price;
     }

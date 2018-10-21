@@ -2,12 +2,13 @@
 
 use Lpp\Entity\Item;
 use Lpp\Validator\EntityValidator;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Copyright (c) Bartłomiej Olewiński <bartlomiej.olewinski@gmail.com>
  */
 
-class EntityValidatorTest extends PHPUnit_Framework_TestCase
+class EntityValidatorTest extends TestCase
 {
     public function testValidateGoodItem()
     {

@@ -17,5 +17,5 @@ interface ItemServiceInterface
      *
      * @return \Lpp\Entity\Brand[]
      */
-    public function getResultForCollectionId($collectionId);
+    public function getResultForCollectionId(int $collectionId): array;
 }
