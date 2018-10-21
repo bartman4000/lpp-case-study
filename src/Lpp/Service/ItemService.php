@@ -19,6 +19,7 @@ class ItemService implements ItemServiceInterface
 
     /**
      * ItemService constructor.
+     * @param Serializer $serializer
      */
     public function __construct(Serializer $serializer)
     {
@@ -42,6 +43,10 @@ class ItemService implements ItemServiceInterface
         return $collection->getBrands();
     }
 
+    /**
+     * @param $collectionId
+     * @return bool|string
+     */
     protected function getData($collectionId)
     {
         $path = self::PATH.'/'.$collectionId.'.json';

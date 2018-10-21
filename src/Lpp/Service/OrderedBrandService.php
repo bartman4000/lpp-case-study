@@ -14,6 +14,10 @@ class OrderedBrandService extends UnorderedBrandService
     /** @var callable|null */
     protected $itemSortCallable = null;
 
+    /**
+     * @param string $collectionName
+     * @return \Lpp\Entity\Item[]
+     */
     public function getItemsForCollection($collectionName)
     {
         $items = parent::getItemsForCollection($collectionName);
@@ -23,6 +27,10 @@ class OrderedBrandService extends UnorderedBrandService
         return $items ;
     }
 
+    /**
+     * @param string $collectionName
+     * @return \Lpp\Entity\Brand[]
+     */
     public function getBrandsForCollection($collectionName)
     {
         $items = parent::getBrandsForCollection($collectionName);

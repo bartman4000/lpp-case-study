@@ -1,16 +1,19 @@
 <?php
+/**
+ * Copyright (c) Bartłomiej Olewiński <bartlomiej.olewinski@gmail.com>
+ */
 
 use Lpp\Entity\Brand;
 use Lpp\Entity\Collection;
 use Lpp\Entity\Item;
 
-/**
- * Copyright (c) Bartłomiej Olewiński <bartlomiej.olewinski@gmail.com>
- */
-
-
 abstract class AbstractServiceTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @param $name
+     * @param array $items
+     * @return Brand
+     */
     protected function getBrandMock($name, array $items = [])
     {
         $mockBrand = new Brand();
@@ -20,6 +23,11 @@ abstract class AbstractServiceTest extends PHPUnit_Framework_TestCase
         return $mockBrand;
     }
 
+    /**
+     * @param $name
+     * @param array $prices
+     * @return Item
+     */
     protected function getItemMock($name, array $prices = [])
     {
         $mockItem = new Item();
@@ -29,6 +37,12 @@ abstract class AbstractServiceTest extends PHPUnit_Framework_TestCase
         return $mockItem;
     }
 
+    /**
+     * @param $name
+     * @param $id
+     * @param array $brands
+     * @return Collection
+     */
     protected function getCollectionMock($name, $id, array $brands = [])
     {
         $mockCollection = new Collection();

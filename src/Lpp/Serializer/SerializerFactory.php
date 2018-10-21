@@ -26,7 +26,7 @@ class SerializerFactory
             $dispatcher->addListener(
                 'serializer.post_deserialize',
                 function (ObjectEvent $event) {
-                    if($event instanceof Validable) {
+                    if ($event instanceof Validable) {
                         call_user_func([EntityValidator::class, 'validate'], $event->getObject());
                     }
                 }

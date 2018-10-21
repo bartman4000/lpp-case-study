@@ -15,6 +15,8 @@ class EntityValidator
 
     /**
      * Common validator for Entity objects
+     * @param Validable $item
+     * @return bool
      */
     public static function validate(Validable $item)
     {
