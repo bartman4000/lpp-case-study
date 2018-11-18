@@ -3,7 +3,7 @@ namespace Lpp\Service;
 
 use Lpp;
 
-class UnorderedBrandService implements \Lpp\Service\BrandServiceInterface
+class UnorderedBrandService implements BrandServiceInterface
 {
     /**
      * @var ItemServiceInterface

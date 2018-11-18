@@ -5,7 +5,7 @@
 
 namespace Lpp\Service;
 
-use JMS\Serializer\Serializer;
+use JMS\Serializer\SerializerInterface;
 use Lpp\Entity\Collection;
 
 class ItemService implements ItemServiceInterface
@@ -13,14 +13,14 @@ class ItemService implements ItemServiceInterface
     const PATH = __DIR__.'/../../../data';
 
     /**
-     * @var Serializer
+     * @var SerializerInterface
      */
     protected $serializer;
 
     /**
      * ItemService constructor.
      */
-    public function __construct(Serializer $serializer)
+    public function __construct(SerializerInterface $serializer)
     {
         $this->serializer = $serializer;
     }

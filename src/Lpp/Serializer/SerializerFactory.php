@@ -6,17 +6,18 @@
 namespace Lpp\Serializer;
 
 use JMS\Serializer\EventDispatcher\EventDispatcher;
+use JMS\Serializer\EventDispatcher\Events;
 use JMS\Serializer\EventDispatcher\ObjectEvent;
-use JMS\Serializer\Serializer;
 use JMS\Serializer\SerializerBuilder;
-use Lpp\Entity\Validable;
+use JMS\Serializer\Serializer;
+use Lpp\Entity\Item;
 use Lpp\Validator\EntityValidator;
 
 class SerializerFactory
 {
 
     /**
-     * Factory returning SerializeInterface
+     * Factory returning Serializer
      * @return Serializer
      */
     public static function build(): Serializer
@@ -24,12 +25,10 @@ class SerializerFactory
         $builder = SerializerBuilder::create();
         $builder->configureListeners(function (EventDispatcher $dispatcher) {
             $dispatcher->addListener(
-                'serializer.post_deserialize',
+                Events::POST_DESERIALIZE,
                 function (ObjectEvent $event) {
-                    if($event instanceof Validable) {
-                        call_user_func([EntityValidator::class, 'validate'], $event->getObject());
-                    }
-                }
+                    call_user_func([EntityValidator::class, 'validate'], $event->getObject());
+                }, Item::class
             );
         });
 
